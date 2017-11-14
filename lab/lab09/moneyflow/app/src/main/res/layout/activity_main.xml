@@ -34,7 +34,7 @@
     <ListView
         android:id="@+id/AccountInfoList"
         android:layout_width="363dp"
-        android:layout_height="370dp"
+        android:layout_height="362dp"
         android:layout_marginBottom="65dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
