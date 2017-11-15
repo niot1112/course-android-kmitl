@@ -75,10 +75,15 @@ public class MainActivity extends AppCompatActivity {
 
                 String type = data.getStringExtra("type");
                 String task = data.getStringExtra("task");
-                int amount = Integer.parseInt(data.getStringExtra("amount"));
+                String amnt = data.getStringExtra("amount");
+                if(task.isEmpty() || amnt.isEmpty()){
+                    showList();
+                }else {
+                    int amount = Integer.parseInt(amnt);
 
-                addtoDB(type, task, amount);
-                showList();
+                    addtoDB(type, task, amount);
+                    showList();
+                }
             }
         }
         if (requestCode == EDIT_REQUEST) {
@@ -90,11 +95,16 @@ public class MainActivity extends AppCompatActivity {
                 }else {
                     String type = data.getStringExtra("type");
                     String task = data.getStringExtra("task");
-                    int amount = Integer.parseInt(data.getStringExtra("amount"));
-                    int id = Integer.parseInt(item_id);
+                    String amnt = data.getStringExtra("amount");
+                    if(task.isEmpty() || amnt.isEmpty()){
+                        showList();
+                    }else {
+                        int amount = Integer.parseInt(amnt);
+                        int id = Integer.parseInt(item_id);
 
-                    updateDB(type, task, amount, id);
-                    showList();
+                        updateDB(type, task, amount, id);
+                        showList();
+                    }
                 }
             }
         }
