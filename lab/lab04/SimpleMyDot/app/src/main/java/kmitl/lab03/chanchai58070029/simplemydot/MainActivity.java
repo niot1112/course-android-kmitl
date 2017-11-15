@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity  implements PlaceDots.onDotC
     }
 //when click share button
     public void onShare(View v){
+        checkSave();
         Intent myIntent = new Intent(Intent.ACTION_SEND);
         myIntent.setType("image/*");
 
