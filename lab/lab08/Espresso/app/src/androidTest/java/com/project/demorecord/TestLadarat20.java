@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.replaceText;
@@ -28,6 +29,19 @@ public class TestLadarat20 {
 
     @Test
     public void testLadarat20() {
+        onView(allOf(withId(R.id.btnCl), withText("Clear"), isDisplayed())).perform(click());
+
+        onView(allOf(withId(R.id.editTextAge), isDisplayed())).perform(replaceText("20"), closeSoftKeyboard());
+
+        onView(allOf(withId(R.id.editTExtName),isDisplayed())).perform(replaceText("Ying"), closeSoftKeyboard());
+
+        SystemClock.sleep(2000);
+
+        onView(allOf(withId(R.id.buttonAdded), withText("ADDED"), isDisplayed())).perform(click());
+
+        onView(allOf(withId(R.id.buttonGotoList), withText("GO TO LIST"), isDisplayed())).perform(click());
+
+        pressBack();
 
         onView(allOf(withId(R.id.editTextAge), isDisplayed())).perform(replaceText("20"), closeSoftKeyboard());
 

@@ -35,6 +35,7 @@ public class TestGotolist {
 
     @Test
     public void testGotolist() {
+        onView(allOf(withId(R.id.btnCl), withText("Clear"), isDisplayed())).perform(click());
         onView(allOf(withId(R.id.buttonGotoList), isDisplayed())).perform(click());
 
         onView(allOf(withId(R.id.textNotFound), withText("Not Found"), isDisplayed())).check(matches(withText("Not Found")));
